@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class ConsumerListener {
 
 	@KafkaListener(topics = "topic-1", groupId = "group-1")
-    public void listen(List<String> messages) {
-        messages.forEach(System.out::println);
+    public void listen(List<String> msg) {
+		msg.forEach(System.err::println);
     }
 }

@@ -15,9 +15,9 @@ public class ProducerController {
 	private KafkaTemplate<String, String> kafkaTemplate;
 	
 	@GetMapping
-    public ResponseEntity<String> send() {
-        kafkaTemplate.send("topic-1", "MSG");
-        return ResponseEntity.ok().body("MSG");
+    public ResponseEntity<?> send() {
+        kafkaTemplate.send("topic-1", "SEND...");
+        return ResponseEntity.ok().body("Enviado");
     }
 
 }
