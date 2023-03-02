@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/producer")
+@RequestMapping(value = "/send")
 public class ProducerController {
 	
 	@Autowired
@@ -16,7 +16,7 @@ public class ProducerController {
 	
 	@GetMapping
     public ResponseEntity<String> send() {
-        kafkaTemplate.send("topic", "MSG");
+        kafkaTemplate.send("topic-1", "MSG");
         return ResponseEntity.ok().body("MSG");
     }
 
