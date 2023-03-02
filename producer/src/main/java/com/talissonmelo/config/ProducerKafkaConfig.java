@@ -44,7 +44,9 @@ public class ProducerKafkaConfig {
 	}
 
 	@Bean
-	KafkaAdmin.NewTopics topics() {
-		return new KafkaAdmin.NewTopics(TopicBuilder.name("topic").partitions(2).build());
-	}
+    KafkaAdmin.NewTopics topics() {
+        return new KafkaAdmin.NewTopics(
+                TopicBuilder.name("topic-1").partitions(2).build()
+        );
+    }
 }
